@@ -1,0 +1,27 @@
+html {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 50px;
+    background-color: gray;
+}
+#c {
+    background-color: gray;
+}
+#r {
+    background-color: gray;
+}
+h1 {
+    text-align: center; 
+}
+h2 {
+    text-align: center;
+}
+#card {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#fc {
+    padding-top: 10px;
+}
+#title {
+    position: sticky;
+}

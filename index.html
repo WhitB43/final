@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Graham's Garden</title>
+
+    <body>
+        <div class="row" id="r" href="#">
+            <div class="col-md-6 card mt-4 offset-md-3" id="card" href="#">
+                <div class="card" id="title" href="#">
+                    <h1>The Graham Garden</h1>
+                    <h2>Best Food in the Mohave</h2>  
+                </div>   
+                <br>
+                <form>
+                    <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+                    <input id="inputEmail" type="text" class="form-control" placeholder="johndoe1@yahoo.net" value="" aria-label="Username">
+                    </div>
+          
+                    <br>
+          
+                    <!--  2nd input = checkbox   -->
+                    <input type="radio" id="fl" name="Footlong" val="Footlong"> 
+                    <label for="size">Footlong</label><br> 
+                    <input type="radio" id="6i" name="6-Inch" val="6-Inch"> 
+                    <label for="size">6-Inch</label>
+        
+                    <br><br>
+
+                    <div>
+                        <select id="bread" class="form-select" aria-label="Default select example" href='#'>
+                            <option selected>Breads</option>
+                            <option value="White">White</option>
+                            <option value="Wheat">Wheat</option>
+                            <option value="Rye">Rye</option>
+                        </select>
+                    </div>
+                  
+                    <br>
+
+                    <div>
+                        <select id="cheese" class="form-select" aria-label="Default select example">
+                            <option selected>Cheeses</option>
+                            <option value="American">American</option>
+                            <option value="Pepper Jack">Pepper Jack</option>
+                            <option value="Cheddar">Cheddar</option>
+                        </select>
+                    </div>
+                  
+                    <br>
+
+                    <div>
+                        <h3>Veggies</h3>
+                        <div class="form-check" id="fc" href="#">
+                            <input class="form-check-input" type="checkbox" value="Lettuce" id="checkL">
+                            <label class="form-check-label" for="flexCheckDefault">
+                            Lettuce
+                            </label>
+                        </div>
+                        <div class="form-check" id="fc" href="#">
+                            <input class="form-check-input" type="checkbox" value="Tomato" id="checkT">
+                            <label class="form-check-label" for="flexCheckChecked">
+                            Tomato
+                            </label>
+                        </div>
+                        <div class="form-check" id="fc" href="#">
+                            <input class="form-check-input" type="checkbox" value="Pickle" id="checkP">
+                            <label class="form-check-label" for="flexCheckChecked">
+                            Pickle
+                            </label>
+                        </div>
+                        <div class="form-check" id="fc" href="#">
+                            <input class="form-check-input" type="checkbox" value="Onion" id="checkO">
+                            <label class="form-check-label" for="flexCheckChecked">
+                            Onion
+                            </label>
+                        </div>
+                        <div class="form-check" id="fc" href="#">
+                            <input class="form-check-input" type="checkbox" value="Mushroom" id="checkM">
+                            <label class="form-check-label" for="flexCheckChecked">
+                            Mushroom
+                            </label>
+                        </div>
+                        <div class="form-check" id="fc" href="#">
+                            <input class="form-check-input" type="checkbox" value="Banana Pepper" id="checkBP">
+                            <label class="form-check-label" for="flexCheckChecked">
+                            Banana Pepper
+                            </label>
+                        </div>
+                        <div class="form-check" id="fc" href="#">
+                            <input class="form-check-input" type="checkbox" value="Jalepeno" id="checkJ">
+                            <label class="form-check-label" for="flexCheckChecked">
+                            Jalepeno
+                            </label>
+                        </div>
+                        <div class="form-check" id="fc" href="#">
+                            <input class="form-check-input" type="checkbox" value="Black Olive" id="checkBO">
+                            <label class="form-check-label" for="flexCheckChecked">
+                            Black Olive
+                            </label>
+                        </div>
+                        <div class="form-check" id="fc" href="#">
+                            <input class="form-check-input" type="checkbox" value="Green Olive" id="checkGO">
+                            <label class="form-check-label" for="flexCheckChecked">
+                            Green Olive
+                            </label>
+                        </div>
+                    </div>
+
+                    <br>  <br>  
+                    
+                    <input onclick="send()" id="btnSubmit" class="btn btn-primary" type="submit" value="Send Order" href="#">
+                
+                </form> 
+                <br>
+                <div>
+                    <h3>Previous Order:</h3>
+                    <p id="sent"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
