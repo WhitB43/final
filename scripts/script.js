@@ -54,8 +54,7 @@ function send(sS, bread, cheese, vegetables) {
     }
 };
 
-document.getElementById('order').addEventListener('submit', (e) => {
-  e.preventDefault();
+document.getElementById('submit').addEventListener('click', () => {
   order.send(order.sS, order.bread, order.cheese, order.vegetables);
   console.log(JSON.stringify(order));
   document.getElementById('sent').innerText = JSON.stringify(order, null, 2);
