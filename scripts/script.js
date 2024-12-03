@@ -1,3 +1,5 @@
+
+
 let order = {
     sS: '6 Inch',
     bread: 'Rye',
@@ -12,55 +14,76 @@ var newOrder = {
     vegetables: ''
 };
 
-function send(sS, bread, cheese, vegetables) {
+function send() {
     
-    if($('#fL').is(':checked')) {
-        this.sS = 'Footlong';
+    if($('#fl').is(':checked')) {
+        newOrder.sS = 'Footlong';
     }
     if($('#6i').is(':checked')) {
-        this.sS = '6 Inch';
+        newOrder.sS = '6 Inch';
     }
 
-    this.bread = $('#bread').find(":selected").val();
+    newOrder.bread = $('#bread').find(":selected").val();
 
-    this.cheese = $('#cheese').find(":selected").val();
+    newOrder.cheese = $('#cheese').find(":selected").val();
+
+    newOrder.vegetables = "";
 
     if($('#checkL').is(':checked')){
-        this.vegetables = this.vegetables + $('checkL').val() + ", ";
+        newOrder.vegetables += $('#checkL').val() + ", ";
     }
     if($('#checkT').is(':checked')){
-        this.vegetables = this.vegetables + $('checkT').val() + ", ";
+        newOrder.vegetables += $('#checkT').val() + ", ";
     }
     if($('#checkP').is(':checked')){
-        this.vegetables = this.vegetables + $('checkP').val() + ", ";
+        newOrder.vegetables += $('#checkP').val() + ", ";
     }
     if($('#checkO').is(':checked')){
-        this.vegetables = this.vegetables + $('checkO').val() + ", ";
+        newOrder.vegetables += $('#checkO').val() + ", ";
     }
     if($('#checkM').is(':checked')){
-        this.vegetables = this.vegetables + $('checkM').val() + ", ";
+        newOrder.vegetables += $('#checkM').val() + ", ";
     }
     if($('#checkBP').is(':checked')){
-        this.vegetables = this.vegetables + $('checkBP').val() + ", ";
+        newOrder.vegetables += $('#checkBP').val() + ", ";
     }
     if($('#checkJ').is(':checked')){
-        this.vegetables = this.vegetables + $('checkL').val() + ", ";
+        newOrder.vegetables += $('#checkL').val() + ", ";
     }
     if($('#checkBO').is(':checked')){
-        this.vegetables = this.vegetables + $('checkBO').val() + ", ";
+        newOrder.vegetables += $('#checkBO').val() + ", ";
     }
     if($('#checkGO').is(':checked')){
-        this.vegetables = this.vegetables + $('checkGO').val() + ", ";
+        newOrder.vegetables += $('#checkGO').val() + ", ";
     }
+    console.log(JSON.stringify(newOrder, null, 2));
+    console.log($('#checkGO').is(':checked'));
 };
 
-document.getElementById('submit').addEventListener('click', () => {
-  order.send(order.sS, order.bread, order.cheese, order.vegetables);
+document.getElementById('order').addEventListener('submit', (e) => {
+  e.preventDefault();
+});
+
+document.getElementById('load').addEventListener('click', () => {
+  //updates new order
+  newOrder.sS = order.sS;
+  newOrder.bread = order.bread;
+  newOrder.cheese = order.cheese;
+  newOrder.vegetables = order.vegetables;
+
   console.log(JSON.stringify(order));
   document.getElementById('sent').innerText = JSON.stringify(order, null, 2);
 });
 
-document.getElementById('load').addEventListener('click', () => {
-  console.log(JSON.stringify(order));
-  document.getElementById('sent').innerText = JSON.stringify(order, null, 2);
+document.getElementById('btnSubmit').addEventListener('click', () => {
+    //updates last order 
+    if(!(newOrder.sS === '' && newOrder.bread === '' && newOrder.cheese === '' && newOrder.vegetables === '')){
+        order.sS = newOrder.sS;
+        order.bread = newOrder.bread;
+        order.cheese = newOrder.cheese;
+        order.vegetables = newOrder.vegetables;
+    }
+    send();
+    console.log(JSON.stringify(newOrder));
+    document.getElementById('sent').innerText = JSON.stringify(newOrder, null, 2);
 });
