@@ -14,43 +14,43 @@ var newOrder = {
 
 function send(sS, bread, cheese, vegetables) {
     
-    if($('#fL').is(':checked')) {
+    if(('#fL').is(':checked')) {
         this.sS = 'Footlong';
     }
-    if($('#6i').is(':checked')) {
+    if(('#6i').is(':checked')) {
         this.sS = '6 Inch';
     }
 
-    this.bread = $('#bread').find(":selected").val();
+    this.bread = ('#bread').find(":selected").val();
 
-    this.cheese = $('#cheese').find(":selected").val();
+    this.cheese = ('#cheese').find(":selected").val();
 
-    if($('#checkL').is(':checked')){
-        this.vegetables = this.vegetables + $('checkL').val() + ", ";
+    if(('#checkL').is(':checked')){
+        this.vegetables = this.vegetables + ('checkL').val() + ", ";
     }
-    if($('#checkT').is(':checked')){
-        this.vegetables = this.vegetables + $('checkT').val() + ", ";
+    if(('#checkT').is(':checked')){
+        this.vegetables = this.vegetables + ('checkT').val() + ", ";
     }
-    if($('#checkP').is(':checked')){
-        this.vegetables = this.vegetables + $('checkP').val() + ", ";
+    if(('#checkP').is(':checked')){
+        this.vegetables = this.vegetables + ('checkP').val() + ", ";
     }
-    if($('#checkO').is(':checked')){
-        this.vegetables = this.vegetables + $('checkO').val() + ", ";
+    if(('#checkO').is(':checked')){
+        this.vegetables = this.vegetables + ('checkO').val() + ", ";
     }
-    if($('#checkM').is(':checked')){
-        this.vegetables = this.vegetables + $('checkM').val() + ", ";
+    if(('#checkM').is(':checked')){
+        this.vegetables = this.vegetables + ('checkM').val() + ", ";
     }
-    if($('#checkBP').is(':checked')){
-        this.vegetables = this.vegetables + $('checkBP').val() + ", ";
+    if(('#checkBP').is(':checked')){
+        this.vegetables = this.vegetables + ('checkBP').val() + ", ";
     }
-    if($('#checkJ').is(':checked')){
-        this.vegetables = this.vegetables + $('checkL').val() + ", ";
+    if(('#checkJ').is(':checked')){
+        this.vegetables = this.vegetables + ('checkL').val() + ", ";
     }
-    if($('#checkBO').is(':checked')){
-        this.vegetables = this.vegetables + $('checkBO').val() + ", ";
+    if(('#checkBO').is(':checked')){
+        this.vegetables = this.vegetables + ('checkBO').val() + ", ";
     }
-    if($('#checkGO').is(':checked')){
-        this.vegetables = this.vegetables + $('checkGO').val() + ", ";
+    if(('#checkGO').is(':checked')){
+        this.vegetables = this.vegetables + ('checkGO').val() + ", ";
     }
 };
 
