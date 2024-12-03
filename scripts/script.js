@@ -54,8 +54,7 @@ document.getElementById('order').addEventListener('submit', (e) => {
   document.getElementById('sent').innerText = JSON.stringify(order, null, 2);
 });
 
-document.getElementById('order').addEventListener('button', (e) => {
-  e.preventDefault();
+document.getElementById('load').addEventListener('click', () => {
   console.log(JSON.stringify(order));
   document.getElementById('sent').innerText = JSON.stringify(order, null, 2);
 });
