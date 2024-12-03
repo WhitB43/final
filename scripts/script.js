@@ -51,7 +51,3 @@ document.getElementById('order').addEventListener('submit', (e) => {
   console.log(JSON.stringify(order));
   document.getElementById('sent').innerText = JSON.stringify(order, null, 2);
 });
-
-if (('#btnSubmit').is(':clicked')) {
-    send();
-}
