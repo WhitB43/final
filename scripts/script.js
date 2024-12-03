@@ -47,8 +47,10 @@ function send() {
 
     document.getElementById('sent').innerHTML = final
 
+    console.log(final)
+
 }
 
-if ($('#btnSubmit').is(':clicked')) {
+if (('#btnSubmit').is(':clicked')) {
     send();
 }
