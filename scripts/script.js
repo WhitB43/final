@@ -1,4 +1,4 @@
-let order = {
+var order = {
     sS: '6 Inch',
     bread: 'Rye',
     cheese: 'Swiss',
@@ -6,6 +6,7 @@ let order = {
 };
 
 function send() {
+    
     if($('#fL').is(':checked')) {
         order.sS = 'Footlong';
     }
@@ -15,7 +16,7 @@ function send() {
 
     order.bread = $('#bread').find(":selected").val();
 
-    order.cheese = $('#cheese').find(":selected").val();
+   order.cheese = $('#cheese').find(":selected").val();
 
     if($('#checkL').is(':checked')){
         order.vegetables = order.vegetables + $('checkL').val() + ", ";
@@ -44,10 +45,11 @@ function send() {
     if($('#checkGO').is(':checked')){
         order.vegetables = order.vegetables + $('checkGO').val() + ", ";
     }
-}
+};
 
 document.getElementById('order').addEventListener('submit', (e) => {
   e.preventDefault();
+  send();
   console.log(JSON.stringify(order));
   document.getElementById('sent').innerText = JSON.stringify(order, null, 2);
 });
