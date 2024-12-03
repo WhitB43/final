@@ -1,4 +1,4 @@
-var order = {
+let order = {
     sS: '6 Inch',
     bread: 'Rye',
     cheese: 'Swiss',
@@ -12,54 +12,53 @@ var newOrder = {
     vegetables: ''
 };
 
-function send() {
+function send(sS, bread, cheese, vegetables) {
     
     if($('#fL').is(':checked')) {
-        newOrder.sS = 'Footlong';
+        this.sS = 'Footlong';
     }
     if($('#6i').is(':checked')) {
-        newOrder.sS = '6 Inch';
+        this.sS = '6 Inch';
     }
 
-    newOrder.bread = $('#bread').find(":selected").val();
+    this.bread = $('#bread').find(":selected").val();
 
-    newOrder.cheese = $('#cheese').find(":selected").val();
+    this.cheese = $('#cheese').find(":selected").val();
 
     if($('#checkL').is(':checked')){
-        newOrder.vegetables = newOrder.vegetables + $('checkL').val() + ", ";
+        this.vegetables = this.vegetables + $('checkL').val() + ", ";
     }
     if($('#checkT').is(':checked')){
-        newOrder.vegetables = newOrder.vegetables + $('checkT').val() + ", ";
+        this.vegetables = this.vegetables + $('checkT').val() + ", ";
     }
     if($('#checkP').is(':checked')){
-        newOrder.vegetables = newOrder.vegetables + $('checkP').val() + ", ";
+        this.vegetables = this.vegetables + $('checkP').val() + ", ";
     }
     if($('#checkO').is(':checked')){
-        newOrder.vegetables = newOrder.vegetables + $('checkO').val() + ", ";
+        this.vegetables = this.vegetables + $('checkO').val() + ", ";
     }
     if($('#checkM').is(':checked')){
-        newOrder.vegetables = newOrder.vegetables + $('checkM').val() + ", ";
+        this.vegetables = this.vegetables + $('checkM').val() + ", ";
     }
     if($('#checkBP').is(':checked')){
-        newOrder.vegetables = newOrder.vegetables + $('checkBP').val() + ", ";
+        this.vegetables = this.vegetables + $('checkBP').val() + ", ";
     }
     if($('#checkJ').is(':checked')){
-        newOrder.vegetables = newOrder.vegetables + $('checkL').val() + ", ";
+        this.vegetables = this.vegetables + $('checkL').val() + ", ";
     }
     if($('#checkBO').is(':checked')){
-        newOrder.vegetables = newOrder.vegetables + $('checkBO').val() + ", ";
+        this.vegetables = this.vegetables + $('checkBO').val() + ", ";
     }
     if($('#checkGO').is(':checked')){
-        newOrder.vegetables = newOrder.vegetables + $('checkGO').val() + ", ";
+        this.vegetables = this.vegetables + $('checkGO').val() + ", ";
     }
 };
 
 document.getElementById('order').addEventListener('submit', (e) => {
   e.preventDefault();
-  send();
-  console.log(JSON.stringify(newOrder));
-  document.getElementById('sent').innerText = JSON.stringify(newOrder, null, 2);
-  order = newOrder;
+  order.send(order.sS, order.bread, order.cheese, order.vegetables);
+  console.log(JSON.stringify(order));
+  document.getElementById('sent').innerText = JSON.stringify(order, null, 2);
 });
 
 document.getElementById('load').addEventListener('click', () => {
