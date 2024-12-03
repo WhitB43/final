@@ -48,7 +48,7 @@ function send() {
         newOrder.vegetables += $('#checkBP').val() + ", ";
     }
     if($('#checkJ').is(':checked')){
-        newOrder.vegetables += $('#checkL').val() + ", ";
+        newOrder.vegetables += $('#checkJ').val() + ", ";
     }
     if($('#checkBO').is(':checked')){
         newOrder.vegetables += $('#checkBO').val() + ", ";
