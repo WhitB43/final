@@ -75,15 +75,43 @@ document.getElementById('load').addEventListener('click', () => {
   document.getElementById('sent').innerText = JSON.stringify(order, null, 2);
 });
 
-document.getElementById('btnSubmit').addEventListener('click', () => {
-    //updates last order 
-    if(!(newOrder.sS === '' && newOrder.bread === '' && newOrder.cheese === '' && newOrder.vegetables === '')){
-        order.sS = newOrder.sS;
-        order.bread = newOrder.bread;
-        order.cheese = newOrder.cheese;
-        order.vegetables = newOrder.vegetables;
-    }
+document.getElementById('order').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
     send();
-    console.log(JSON.stringify(newOrder));
-    document.getElementById('sent').innerText = JSON.stringify(newOrder, null, 2);
+
+    const orderData = {
+        size: newOrder.sS,
+        bread: newOrder.bread,
+        cheese: newOrder.cheese,
+        vegetables: newOrder.vegetables
+            .split(',')
+            .map(v => v.trim())
+            .filter(v => v !== '')
+    };
+
+    try {
+        const response = await fetch('/api/orders', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderData)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.error);
+        }
+
+        document.getElementById('sent').innerText =
+            result.message;
+
+    } catch (error) {
+        document.getElementById('sent').innerText =
+            'Order rejected: ' + error.message;
+    }
+});
+
 });
