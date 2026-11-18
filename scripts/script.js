@@ -60,10 +60,6 @@ function send() {
     console.log($('#checkGO').is(':checked'));
 };
 
-document.getElementById('order').addEventListener('submit', (e) => {
-  e.preventDefault();
-});
-
 document.getElementById('load').addEventListener('click', () => {
   //updates new order
   newOrder.sS = order.sS;
