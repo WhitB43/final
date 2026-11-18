@@ -113,5 +113,3 @@ document.getElementById('order').addEventListener('submit', async (e) => {
             'Order rejected: ' + error.message;
     }
 });
-
-});
